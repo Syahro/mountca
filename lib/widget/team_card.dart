@@ -224,7 +224,143 @@ class TeamCard extends StatelessWidget {
                   height: 50,
                   width: 135,
                   child: RaisedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      isFull
+                          ? null
+                          : showDialog(
+                              context: context,
+                              builder: (_) => AlertDialog(
+                                content: Padding(
+                                  padding: EdgeInsets.all(8),
+                                  child: Container(
+                                    height: 380,
+                                    child: Column(
+                                      children: [
+                                        Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.end,
+                                          children: [
+                                            InkWell(
+                                              onTap: () {},
+                                              child: Icon(
+                                                Icons.close,
+                                                color:
+                                                    blackColor.withOpacity(0.2),
+                                              ),
+                                            ),
+                                          ],
+                                        ),
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        Image.asset(
+                                          'assets/illustration.png',
+                                          width: 168,
+                                          height: 128,
+                                        ),
+                                        SizedBox(
+                                          height: 15,
+                                        ),
+                                        Text(
+                                          'Yuhuuu, kamu berhasil\nbergabung dalam tim!',
+                                          style: boldStyle.copyWith(
+                                            fontSize: 18,
+                                            fontWeight: FontWeight.w600,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(
+                                          height: 10,
+                                        ),
+                                        Text(
+                                          'Tunggu ketua tim ini untuk\nmengkonfirmasi bahwa kamu\nditerima',
+                                          style: regularStyle.copyWith(
+                                            fontSize: 12,
+                                            color: semiDarkGreyColor,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                        SizedBox(
+                                          height: 30,
+                                        ),
+                                        Container(
+                                          height: 61,
+                                          width: double.infinity,
+                                          decoration: BoxDecoration(
+                                            color: Colors.transparent,
+                                            borderRadius:
+                                                BorderRadius.circular(10),
+                                            border: Border.all(
+                                              color: semiDarkGreyColor
+                                                  .withOpacity(0.5),
+                                            ),
+                                          ),
+                                          child: Padding(
+                                            padding: EdgeInsets.symmetric(
+                                              horizontal: 15,
+                                            ),
+                                            child: Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Text.rich(
+                                                  TextSpan(
+                                                      text: 'Gunung Semeru',
+                                                      style: boldStyle.copyWith(
+                                                        fontSize: 12,
+                                                        fontWeight:
+                                                            FontWeight.w600,
+                                                      ),
+                                                      children: [
+                                                        TextSpan(
+                                                          text:
+                                                              '\nvia Ranu Pane',
+                                                          style: regularStyle
+                                                              .copyWith(
+                                                            fontSize: 12,
+                                                            color:
+                                                                semiDarkGreyColor,
+                                                          ),
+                                                        ),
+                                                      ]),
+                                                ),
+                                                Container(
+                                                  padding: EdgeInsets.all(8),
+                                                  decoration: BoxDecoration(
+                                                    color: Colors.transparent,
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10),
+                                                    border: Border.all(
+                                                      color: purpleColor
+                                                          .withOpacity(
+                                                        0.5,
+                                                      ),
+                                                    ),
+                                                  ),
+                                                  child: Text(
+                                                    'Lihat Team',
+                                                    style:
+                                                        regularStyle.copyWith(
+                                                      fontSize: 10,
+                                                      color: purpleColor,
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ),
+                                        )
+                                      ],
+                                    ),
+                                  ),
+                                ),
+                                backgroundColor: whiteColor,
+                                elevation: 2,
+                              ),
+                            );
+                    },
                     color: isFull ? lightPurpleColor : purpleColor,
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10),
