@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountca/pages/join_team_page.dart';
 import 'package:mountca/theme.dart';
 import 'package:mountca/widget/information.dart';
 
@@ -185,7 +186,16 @@ class MountCard extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: GestureDetector(
-                    onTap: () {},
+                    onTap: () {
+                      isAny
+                          ? isAnyTeam
+                              ? Navigator.push(context,
+                                  MaterialPageRoute(builder: (context) {
+                                  return JoinTeamPage();
+                                }))
+                              : null
+                          : null;
+                    },
                     child: Container(
                       decoration: BoxDecoration(
                         color: isAny

@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 final double defaultMargin = 24.0;
-  
+
 Color whiteColor = Color(0XFFFFFFFF);
 Color lightGreyColor = Color(0XFF9392FC);
 Color semiLightGreyColor = Color(0XFFF8F8F8);

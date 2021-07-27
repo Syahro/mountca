@@ -117,9 +117,14 @@ class MountPage extends StatelessWidget {
                                 padding: EdgeInsets.symmetric(horizontal: 15),
                                 child: Row(
                                   children: [
-                                    Icon(
-                                      Icons.search,
-                                      color: darkGreyColor,
+                                    InkWell(
+                                      onTap: () {
+                                        Navigator.pop(context);
+                                      },
+                                      child: Icon(
+                                        Icons.search,
+                                        color: darkGreyColor,
+                                      ),
                                     ),
                                     SizedBox(
                                       width: 10,
