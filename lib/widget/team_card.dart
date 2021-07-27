@@ -1,5 +1,6 @@
 import 'package:dotted_line/dotted_line.dart';
 import 'package:flutter/material.dart';
+import 'package:mountca/pages/team_page.dart';
 import 'package:mountca/theme.dart';
 import 'package:mountca/widget/trip_duration_info.dart';
 
@@ -231,7 +232,7 @@ class TeamCard extends StatelessWidget {
                               context: context,
                               builder: (_) => AlertDialog(
                                 content: Padding(
-                                  padding: EdgeInsets.all(8),
+                                  padding: EdgeInsets.all(5),
                                   child: Container(
                                     height: 380,
                                     child: Column(
@@ -297,7 +298,7 @@ class TeamCard extends StatelessWidget {
                                           ),
                                           child: Padding(
                                             padding: EdgeInsets.symmetric(
-                                              horizontal: 15,
+                                              horizontal: 10,
                                             ),
                                             child: Row(
                                               mainAxisAlignment:
@@ -325,26 +326,38 @@ class TeamCard extends StatelessWidget {
                                                         ),
                                                       ]),
                                                 ),
-                                                Container(
-                                                  padding: EdgeInsets.all(8),
-                                                  decoration: BoxDecoration(
-                                                    color: Colors.transparent,
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            10),
-                                                    border: Border.all(
-                                                      color: purpleColor
-                                                          .withOpacity(
-                                                        0.5,
+                                                InkWell(
+                                                  onTap: () {
+                                                    Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                        builder: (context) {
+                                                          return TeamPage();
+                                                        },
+                                                      ),
+                                                    );
+                                                  },
+                                                  child: Container(
+                                                    padding: EdgeInsets.all(8),
+                                                    decoration: BoxDecoration(
+                                                      color: Colors.transparent,
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              10),
+                                                      border: Border.all(
+                                                        color: purpleColor
+                                                            .withOpacity(
+                                                          0.5,
+                                                        ),
                                                       ),
                                                     ),
-                                                  ),
-                                                  child: Text(
-                                                    'Lihat Team',
-                                                    style:
-                                                        regularStyle.copyWith(
-                                                      fontSize: 10,
-                                                      color: purpleColor,
+                                                    child: Text(
+                                                      'Lihat Team',
+                                                      style:
+                                                          regularStyle.copyWith(
+                                                        fontSize: 10,
+                                                        color: purpleColor,
+                                                      ),
                                                     ),
                                                   ),
                                                 )
