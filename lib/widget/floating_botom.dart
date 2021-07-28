@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountca/pages/profile_page.dart';
 import 'package:mountca/pages/search_page.dart';
 import 'package:mountca/theme.dart';
 
@@ -62,10 +63,22 @@ class FloatingBotom extends StatelessWidget {
                 )
               ],
             ),
-            Image.asset(
-              'assets/user.png',
-              width: 20,
-              height: 20,
+            InkWell(
+              onTap: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return ProfilePage();
+                    },
+                  ),
+                );
+              },
+              child: Image.asset(
+                'assets/user.png',
+                width: 20,
+                height: 20,
+              ),
             ),
           ],
         ),
