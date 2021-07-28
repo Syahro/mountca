@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mountca/pages/search_page.dart';
 import 'package:mountca/theme.dart';
 
 class FloatingBotom extends StatelessWidget {
@@ -28,10 +29,17 @@ class FloatingBotom extends StatelessWidget {
               width: 20,
               height: 20,
             ),
-            Image.asset(
-              'assets/search.png',
-              width: 20,
-              height: 20,
+            GestureDetector(
+              onTap: () {
+                Navigator.push(context, MaterialPageRoute(builder: (context) {
+                  return SearchPage();
+                }));
+              },
+              child: Image.asset(
+                'assets/search.png',
+                width: 20,
+                height: 20,
+              ),
             ),
             Column(
               mainAxisAlignment: MainAxisAlignment.center,
